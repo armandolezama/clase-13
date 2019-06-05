@@ -5,17 +5,13 @@ const port = 8000;
 const textoDePrueba = 'Js y node son herramientas  fáciles que deben de usarse correctamente para implementar una web, la parte del server es confusa pero se puede lograr aprender.'
 
 function responseHandler(request, response){
-    fs.writeFile('historia.txt', textoDePrueba, function(err){
-        if(err){
-            throw err;
-        }
-    })
 
-    fs.readFile('historia.txt', {encoding: "utf8"}, function(err, contenido){
+    fs.readFile('static/index.html', {encoding: "utf8"}, function(err, contenido){
         if (err){
             throw err;
         }
 
+        response.writeHeader(200, {"Content-Type": "text/html"})
         response.write(contenido);
         response.end();
     })
