@@ -1,0 +1,1 @@
+Js y node son herramientas  fáciles que deben de usarse correctamente para implementar una web, la parte del server es confusa pero se puede lograr aprender.
